@@ -26,7 +26,6 @@ class Mobile:
         
 if __name__ == '__main__':
     
-    store1 = Store()
     print()
 
 
