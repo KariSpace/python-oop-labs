@@ -25,12 +25,14 @@ class Mobile:
         return True
         
 if __name__ == '__main__':
+    
+    store1 = Store()
+    print()
+
+
     ## Create an instance of the Mobile Class.
     m1 = Mobile("Apple", "iPhone 11", "Blue", 780)
     m2 = Mobile("Samsung", "S10", "Red", 300)
-    m3 = Mobile("Samsung", "S10", "Red", 600)
-    m4 = Mobile("Samsung", "S10", "Red", 600)
-    m5 = Mobile("Samsung", "S10", "Red", 600)
 
     print(m2.discount_rate) # 0.5
     m1.set_discout_rate(0.5)
