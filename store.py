@@ -2,7 +2,7 @@ class Store :
         
     discount_rate = 0.2
     
-    def __init__(self, store_name, phones_amount):
+    def __init__(self, company_name, phones_amount):
         self.store_name = store_name   
         self.phones_amount = phones_amount
              
