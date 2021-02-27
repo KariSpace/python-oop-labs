@@ -1,6 +1,8 @@
 from datetime import date
-CBLUE = '\33[104m'
+CBLUE = '\033[44m'
+CRED = '\033[1;31;48m'
 CEND = '\033[0m'
+
 
 class Store:
 
@@ -14,8 +16,12 @@ class Store:
         return f'This is a store {self.store_name}. Now available {self.phones_amount} phones'
 
     @classmethod
-    def buy_phone(cls):
-        cls.phones_amount -= 1
+    def buy_phone(cls, phone):
+        if(Store.is_shop_open()):
+            cls.phones_amount -= 1
+        else:
+            print(f'\n\n{CRED}Shop is closed today!{CEND}')
+    
 
     @classmethod
     def storrage_refill(cls, amount):
@@ -48,7 +54,7 @@ if __name__ == '__main__':
     print(f'\n\n{CBLUE}Class method:{CEND}')
 
     print(store1.phones_amount) # 5
-    store2.buy_phone() 
+    store2.buy_phone("phone") 
     print(store1.phones_amount) # 4
 
     Store.storrage_refill(10)
