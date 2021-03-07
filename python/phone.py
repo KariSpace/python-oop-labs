@@ -9,45 +9,45 @@ CEND = '\033[0m'
 
 class Phone:              
 
-    color = "Grey"
+    basic_color = "Grey"
 
-    def __init__(self, company_name, model_name, price, color_name):
-        self.company_name = company_name   
-        self._model_name = model_name       # 'Please' don't access directly
+    def __init__(self, company, model, price, hue):
+        self.company = company   
+        self._model = model       # 'Please' don't access directly
         self.price = price   
-        self.color_name = color_name + self.__class__.color
+        self.color = hue + self.__class__.basic_color
 
     def __str__(self):
         """Return a descriptive string for this instance, invoked by print() and str()"""
-        return f'\nThis is a {self.color_name} {self.company_name} {self._model_name} phone' 
+        return f'\nThis is a {self.color} {self.company} {self._model} phone' 
 
     def discount_price(self, discount):
         return self.price*(1-discount)
     
-    def set_model_name(self, _model_name):
-        """Setter for instance variable model_name"""
-        match = re.search(r'[^0-9]', _model_name)
+    def set_model(self, _model):
+        """Setter for instance variable model"""
+        match = re.search(r'[^0-9]', _model)
         if(match):
-            raise ValueError('Radius shall be non-numeric')
+            raise ValueError('Shall be non-numeric')
         else:
-            self._model_name = _model_name
+            self._model = _model
 
-    def get_model_name(self): 
-        """Getter for instance variable model_name"""
-        return self._model_name
+    def get_model(self): 
+        """Getter for instance variable model"""
+        return self._model
 
 
 
 class Smartphone(Phone):                
     
-    def __init__(self, company_name, model_name, operation_system, price, color_name):
-        super().__init__(company_name, model_name, price, color_name)
+    def __init__(self, company, model, operation_system, price, color):
+        super().__init__(company, model, price, color)
 
         self.operation_system =  operation_system
 
     def __str__(self):
         """Return a descriptive string for this instance, invoked by print() and str()"""
-        return f'\nThis is a {self.color} Smartphone with {self.operation_system}'
+        return f'\nThis is a {self.basic_color} Smartphone with {self.operation_system}'
 
 
 if __name__ == '__main__':
