@@ -1,8 +1,8 @@
 from abc import abstractmethod
-from typing import Protocol, Iterable
+from typing import Protocol, Iterable, runtime_checkable
 import re
 
-
+@runtime_checkable
 class SupportsPhone(Protocol):
     @abstractmethod
     def call(self) -> None:
