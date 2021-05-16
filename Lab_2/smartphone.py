@@ -2,7 +2,9 @@ import random
 from mobilePhone import MobilePhone
 from phone import Phone
 
-class SmartPhone(MobilePhone):                
+class SmartPhone(MobilePhone):      
+        
+    type = "smart"
     
     def __init__(self, company, model, battery, screen, camera, operation_system):
         MobilePhone.__init__(self, company, battery, screen)
@@ -10,7 +12,6 @@ class SmartPhone(MobilePhone):
 
         self.model =  model
         self.screen =  screen
-        self.type = "smart"
         self.camera =  camera
         self.operation_system =  operation_system
 
@@ -18,7 +19,8 @@ class SmartPhone(MobilePhone):
         """Return a descriptive string for this instance, invoked by print() and str()"""
         return f'\nThis is a {self.type} phone, with battery : {self.battery}, and {self.screen} screen, {self.camera} camera, {self.operation_system} operation_system,'
         
-    def update_os(self): 
+    def update_os(self):
+        super.send_sms("899-455-9095", "Hi! How are you?")
         if random.choice([True, False]):
             print(f'Started updating your {self.operation_system}...\nDone!')
         else:

@@ -43,8 +43,8 @@ class Default_ATM(ATM):
         else: 
             print("ATM blocked, call incasators")
 
-atm1 = Default_ATM(10)
-atm1.givemoney(200)
-atm1.givemoney(200)
-atm1.callTheIncasator()
-atm1.givemoney(200)
+# atm1 = Default_ATM(10)
+# atm1.givemoney(200)
+# atm1.givemoney(200)
+# atm1.callTheIncasator()
+# atm1.givemoney(200)
