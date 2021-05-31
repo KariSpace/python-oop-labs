@@ -12,6 +12,12 @@ class Default_ATM(ATM):
         self.blocked = False
         self.volume = 10000
         self.money = money
+
+
+    def __str__(self):
+            """Return a descriptive string for this instance, invoked by print() and str()"""
+            return f'\nThis is a ATM : {self.money}, and  {self.volume} volume'
+
   
     def givemoney(self, moneyWithdraw):
         if(not self.blocked):

@@ -13,6 +13,13 @@ class Secure_ATM(ATM):
         self.volume = 50000
         self.money = money
   
+
+    def __str__(self):
+            """Return a descriptive string for this instance, invoked by print() and str()"""
+            return f'\nThis is a SECURE ATM : {self.money}, and  {self.volume} volume'
+
+  
+
     def givemoney(self, moneyWithdraw):
         if(not self.blocked):
             print("userAccount?")

@@ -20,16 +20,16 @@ class Phone(SupportsPhone):
         print(f'\nCalling to {phone_number}...')
 
 
-class MobilePhone():                
+class MobilePhone(SupportsPhone):                
     
     def __init__(self, company, battery, screen):
         self.screen =  screen
         self.company = company   
         self.battery = battery
 
-    def call(self): 
-        phone_number = "0000000000"
-        print(f'Calling to {phone_number} by facetime...')
+    # def call(self): 
+    #     phone_number = "0000000000"
+    #     print(f'Calling to {phone_number} by facetime...')
 
 
 
@@ -40,4 +40,4 @@ def phone_all(phones: Iterable[SupportsPhone]) -> None:
 
 
 phone_all([Phone("Samsung", 2500)])  # ok
-phone_all([Phone("Samsung", 2500), MobilePhone("Samsung", 900, "16inch")])  # ok
+phone_all([MobilePhone("Samsung", 900, "16inch")])  # ok

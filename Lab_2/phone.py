@@ -20,6 +20,7 @@ class Phone:
 
 
 
-# m1 = Phone("Siemens", 500)
-# print(m1)
-# m1.call("349-345-0985")
+m1 = Phone("Siemens", 500)
+print(m1)
+m1.call("349-345-0985")
+print(m1)
