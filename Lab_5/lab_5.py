@@ -1,9 +1,11 @@
 import re
 from beeprint import pp
 
-clases = {}
 
 class MyMetaclass(type):
+
+    clases = {}
+
     def __new__(cls, clsname, superclasses, attributedict):
       #   print("clsname: ", clsname)
       #   print("superclasses: ", superclasses)
@@ -61,3 +63,4 @@ class Phone(metaclass=MyMetaclass):
 
 
 pp(clases)
+print(clases)
